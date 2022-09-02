@@ -24,7 +24,7 @@ hisat2 -p 8 --rg-id=$rgid --rg SM:$3 --rg LB:rnaseq --rg PL:ILLUMINA --rg PU:$rg
 
 samtools view -u $output/$3.sam | samtools sort -@ 8 - $output/$3
 
-stringtie --rf -p 28 -j 3 -c 7.5 -g 1 -v -G $ref_dir/GCA_002759435.2_Cand_auris_B8441_V2_genomic.no_genes.gtf -e -o $output/$3.transcripts.gtf -A $output/$3.abundances.csv $output/$3.bam
+stringtie --rf -p 28 -B -j 3 -c 7.5 -g 1 -v -G $ref_dir/GCA_002759435.2_Cand_auris_B8441_V2_genomic.no_genes.gtf -e -o $output/$3.transcripts.gtf -A $output/$3.abundances.csv $output/$3.bam
 
 cp -v $output/$3.bam $results_dir
 cp -v $output/$3.transcripts.gtf $results_dir
