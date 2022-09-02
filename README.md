@@ -41,7 +41,7 @@ Now convert to BAM:
 
 This BAM file can be used as input for Stringtie to generate expression estimates in 'reference only' mode. This reduced run time. However, Stringtie can predict the transcripts present in each library by dropping the -G option and not providing the gtf/gff3.
 
-stringtie --rf -p 28 -j 3 -c 7.5 -g 1 -v -G GCA_002759435.2_Cand_auris_B8441_V2_genomic.no_genes.gtf -o PR_0h_REP1.transcripts.gtf -A PR_0h_REP1.abundances.csv PR_0h_REP1.bam
+stringtie --rf -p 28 -B -j 3 -c 7.5 -g 1 -v -G GCA_002759435.2_Cand_auris_B8441_V2_genomic.no_genes.gtf -o PR_0h_REP1.transcripts.gtf -A PR_0h_REP1.abundances.csv PR_0h_REP1.bam
 
 Where: --rf tells StringTie that our data is stranded and to use the correct strand specific mode
 -o output file name for assembled transcripts
@@ -52,3 +52,4 @@ Where: --rf tells StringTie that our data is stranded and to use the correct str
 -v verbose output
 -G gtf/gff3 file
 -g
+-B create Ballgown specific output
